@@ -1,4 +1,4 @@
-package bkw.studyhard;
+package bkw.wrong;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +15,7 @@ public class Exercise5_5 {
         for(int i=0; i<ballArr.length; i++){
             int j = (int)(Math.random()*ballArr.length);
             int tmp = 0;
+
             //
             tmp = ballArr[i];
             ballArr[i]=ballArr[j];
