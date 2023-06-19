@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th=http://www.thymeleaf.org>
+<head>
+    <meta charset="UTF-8">
+    <title>index.html</title>
+</head>
+<body>
+<style>
+    input {
+        width: 300px;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-size: 20px;
+    }
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+<!--org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: 오류때문에 placeholder에 ||로 감쌌음-->
+<input th:type="text" id="dateField" th:placeholder="|Enter a date in  DD.MM.YYYY format|" />
+<p>Date is<span></span></p>
+
+<script>
+
+    const today = moment();
+    console.log("Today's date is: " + today.format('YYYY-MM-DD'));
+
+
+    // Data 검증
+    // const dateTextField = document.querySelector('input');
+    let dataTextField = $("input");
+    const validStatus = document.querySelector('span');
+
+    function checkDateValidity(){
+        const dateEntered = this.value;
+        const dateIsValid = moment(dateEntered, "DD.MM.YYYY", true).isValid();
+        validStatus.textContent = dateIsValid ? 'valid' : 'invalid';
+
+    }
+
+    dataTextField.addEventListener('keyup', checkDateValidity, false);
+    checkDateValidity();
+
+
+
+
+</script>
+
+</body>
+</html>
