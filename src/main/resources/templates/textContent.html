@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>양쪽 공백제거 체험</title>
 </head>
 <body>
-
+    <p>   Hi Webisfree.com Web Development   </p>
 </body>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+
+    var msg0 = $.trim($('p').text()); //양쪽공백제거
+    console.log('msg0 : '+msg0);
+
+    var msg = $('p').text();
+    console.log('msg : '+msg);
+
+    var msmsg = $('p')[0].textContent;
+    console.log('msmsg : '+msmsg);
+
+    var msg1 = document.querySelector('p').innerText; //양쪽공백제거
+    console.log('msg1 : '+msg1);
+
+    var msg2 = document.querySelector('p').textContent;
+    console.log('msg2 : '+msg2)
+/*
+
+    결론 : DOM방식의 innerText는 양쪽의 불필요한 공백을 제거해서 보여준다.
+    제이쿼리의 $.trim()과 DOM의 innerText와 유사하다.
+
+*/
+
+</script>
 </html>

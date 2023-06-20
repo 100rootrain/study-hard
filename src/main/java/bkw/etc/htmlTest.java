@@ -2,23 +2,25 @@ package bkw.etc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class htmlTest {
 
-    @RequestMapping("/moment")
+    @RequestMapping("/moment")//JQUERY
     public String moment() {
         return "moment";
     }
 
 
-    //queryselector
-    @RequestMapping("/momentqueryselector")
-    public String momentqueryselector(){
+    @RequestMapping("/momentqueryselector")//DOM
+    public String momentqueryselector() {
         return "momentqueryselector";
     }
 
+    @RequestMapping("/textContent")//DOM , JQUERY
+    public String textContent() {
+        return "textContent";
+    }
 
 
 }
