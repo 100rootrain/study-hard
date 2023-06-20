@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th=http://www.thymeleaf.org>
+
 <head>
     <meta charset="UTF-8">
-    <title>index.html</title>
+    <title>moment.js 제이쿼리 형식</title>
 </head>
-<body>
 <style>
     input {
         width: 300px;
@@ -21,11 +21,13 @@
     }
 
 </style>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
 <!--org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: 오류때문에 placeholder에 ||로 감쌌음-->
-<input th:type="text" id="dateField" th:placeholder="|Enter a date in  DD.MM.YYYY format|" />
-<p>Date is<span></span></p>
+<input th:id="input" th:type="text" id="dateField" th:placeholder="|Enter a date in  DD.MM.YYYY format|"/>
+<p>Date is <span th:id="span"></span></p>
 
 <script>
 
@@ -34,21 +36,21 @@
 
 
     // Data 검증
-    // const dateTextField = document.querySelector('input');
-    let dataTextField = $("input");
-    const validStatus = document.querySelector('span');
+    let dataTextField = $('input');
+    const validStatus = $('span');
 
-    function checkDateValidity(){
-        const dateEntered = this.value;
+    console.log("dataTextField : " + dataTextField);
+    console.log("validStatus : " + validStatus);
+
+    function checkDateValidity() {
+        const dateEntered = $(this).val();
         const dateIsValid = moment(dateEntered, "DD.MM.YYYY", true).isValid();
-        validStatus.textContent = dateIsValid ? 'valid' : 'invalid';
-
+        validStatus.text(dateIsValid ? 'valid' : 'invalid');
     }
 
-    dataTextField.addEventListener('keyup', checkDateValidity, false);
-    checkDateValidity();
-
-
+    $(document).ready(function () {
+        dataTextField.keyup(checkDateValidity);
+    });
 
 
 </script>

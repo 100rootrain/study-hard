@@ -12,12 +12,13 @@ public class htmlTest {
         return "moment";
     }
 
-//    @RequestMapping("/moment")
-//    public ModelAndView home() {
-//        ModelAndView mv = new ModelAndView();
-//        mv.setViewName("moment");
-//        return mv;
-//    }
+
+    //queryselector
+    @RequestMapping("/momentqueryselector")
+    public String momentqueryselector(){
+        return "momentqueryselector";
+    }
+
 
 
 }

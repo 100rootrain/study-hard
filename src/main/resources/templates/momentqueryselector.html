@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>index.html</title>
+  <title>queryselector 형식</title>
 </head>
 <style>
   input {
@@ -23,9 +23,6 @@
 </style>
 <body>
 
-
-<h1 th:text="'타임리프 페이지 - index.html'"></h1>
-<p><a th:href="@{http://www.naver.com}" th:text="'네이버로 이동..'"></a></p>
 <input th:type="text" id="dateField" th:placeholder="|Enter a date in  DD.MM.YYYY format|" />
 <p>Date is<span></span></p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
@@ -38,9 +35,9 @@
   const validStatus = document.querySelector('span');
 
   function checkDateValidity(){
-    const dateEntered = this.value;
+    const dateEntered = this.value; //input 값
     const dateIsValid = moment(dateEntered, "DD.MM.YYYY", true).isValid();
-    validStatus.textContent = dateIsValid ? 'valid' : 'invalid';
+    validStatus.textContent = dateIsValid ? 'valid' : 'invalid'; //지정한 날짜 형식에 맞으면 valid
 
   }
 
