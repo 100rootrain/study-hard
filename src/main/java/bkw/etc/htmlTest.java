@@ -22,5 +22,11 @@ public class htmlTest {
         return "textContent";
     }
 
+    @RequestMapping("/sortPractice")
+    public String sortSort(){
+        return "sortPractice";
+    }
+
+
 
 }
