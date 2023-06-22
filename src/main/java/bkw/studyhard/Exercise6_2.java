@@ -19,6 +19,7 @@ class Student {
     int kor;
     int eng;
     int math;
+    Student(){} //기본생성자
     Student(String name, int ban, int no, int kor, int eng, int math) {
         this.name = name;
         this.ban = ban;
