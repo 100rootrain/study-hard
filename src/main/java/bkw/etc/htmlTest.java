@@ -22,7 +22,7 @@ public class htmlTest {
         return "textContent";
     }
 
-    @RequestMapping("/sortPractice")
+    @RequestMapping("/sortPractice") //오름차순,내림차순,프로그래머스문제, Object정렬, 동적접근
     public String sortSort(){
         return "sortPractice";
     }
