@@ -1,4 +1,4 @@
-package bkw.studyhard;
+package bkw.studyhard.exercise;
 
 public class Exercise6_3{
     public static void main(String[] args){

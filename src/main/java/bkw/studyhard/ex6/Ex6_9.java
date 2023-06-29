@@ -1,4 +1,4 @@
-package bkw.studyhard;
+package bkw.studyhard.ex6;
 
 class MyMath2 {
     long a, b;

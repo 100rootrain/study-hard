@@ -1,4 +1,4 @@
-package bkw.studyhard;
+package bkw.studyhard.ex6;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

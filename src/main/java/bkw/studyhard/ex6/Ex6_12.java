@@ -1,4 +1,4 @@
-package bkw.studyhard;
+package bkw.studyhard.ex6;
 class Car {
     String color;		// 색상
     String gearType;	// 변속기 종류 - auto(자동), manual(수동)

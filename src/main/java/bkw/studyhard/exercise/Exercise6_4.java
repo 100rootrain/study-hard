@@ -1,4 +1,4 @@
-package bkw.studyhard;
+package bkw.studyhard.exercise;
 
 public class Exercise6_4 {
 //    두 점(x,y)와 (x1,y1)간의 거리를 구한다.

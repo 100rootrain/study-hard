@@ -1,4 +1,4 @@
-package bkw.studyhard;
+package bkw.studyhard.exercise;
 
 class MyPoint {
     int x; // 인스턴스 변수

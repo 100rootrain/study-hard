@@ -1,4 +1,4 @@
-package bkw.studyhard;
+package bkw.studyhard.ex6;
 
 class Car2 {
     String color;		// 색상
