@@ -26,8 +26,6 @@ public class Car {
         gear = g;
     }
 
-//    public class CarTest{
-
 
         public static void main(String[] args){
             Car myCar = new Car(); //객체 생성
@@ -40,11 +38,7 @@ public class Car {
             System.out.println("현재 자동차의 속도는 : "+myCar.getSpeed());
             System.out.println("현재 자동차의 기어는 : "+myCar.getGear());
 
-
         }
-//    }
-
-
 
 }
 
