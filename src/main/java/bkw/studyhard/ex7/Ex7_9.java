@@ -70,7 +70,9 @@ class Buyer2 {              // 고객, 물건을 사는 사람
         for (int i = 0; i < cart.length; i++) {
             if (cart[i] == null) break;
             sum += cart[i].price;
-            itemList += cart[i] + ", ";
+            //itemList += cart[i] + ", ";
+            //위의 itemList += cart[i] + ", "; 가 거슬린다면 아래를 써도된다.
+            itemList += (i==0) ? "" + cart[i] : ", " + cart[i];
         }
         System.out.println("구입하신 물품의 총금액은 " + sum + "만원입니다.");
         System.out.println("구입하신 제품은 " + itemList + "입니다.");
