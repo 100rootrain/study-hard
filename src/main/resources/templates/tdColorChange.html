@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <script>
+    let orgBColor = '#ffffff';
+    let orgTColor = '#000000';
+    function HighLightTR(target, backColor,textColor) {
+      let tbody = target.parentNode;
+      let trs = tbody.getElementsByTagName('tr');
+      for ( let i = 0; i < trs.length; i++ ) {
+        if ( trs[i] != target ) {
+          trs[i].style.backgroundColor = orgBColor;
+          trs[i].style.color = orgTColor;
+        } else {
+          trs[i].style.backgroundColor = backColor;
+          trs[i].style.color = textColor;
+        }
+      } // endfor i
+    }
+  </script>
+</head>
+
+<table border=1 align=center>
+  <th>test1</th>
+  <th>test2</th>
+  <tr onClick="HighLightTR(this, '#c9cc99','cc3333');" >
+    <td align=right>1111</td>
+    <td align=right>Test</td>
+  </tr>
+  <tr onClick="HighLightTR(this, '#c9cc99','cc3333');" >
+    <td align=right>2222</td>
+    <td align=right>Test</td>
+  </tr>
+  <tr onClick="HighLightTR(this, '#c9cc99','cc3333');" >
+    <td align=right>3333</td>
+    <td align=right>Test</td>
+  </tr>
+  <tr onClick="HighLightTR(this, '#c9cc99','cc3333');" >
+    <td align=right>4444</td>
+    <td align=right>Test</td>
+  </tr>
+</table>
+</html>

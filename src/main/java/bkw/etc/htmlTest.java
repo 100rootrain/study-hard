@@ -27,6 +27,9 @@ public class htmlTest {
         return "sortPractice";
     }
 
+    @RequestMapping("/tdColorChange") //td 클릭시 색깔 변하게
+    public String tdCg(){return "tdColorChange";}
+
 
 
 }
