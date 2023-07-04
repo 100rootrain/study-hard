@@ -1,8 +1,11 @@
 package bkw.studyhard.ex7;
 
 class Outer2 {
+    private int outerIv = 0;
+    static int outerCv = 0;
     class InstanceInner {
         int iv = 100;
+        int iiv = outerIv;
     }
 
     static class StaticInner {
@@ -13,7 +16,10 @@ class Outer2 {
     void myMethod() {
         class LocalInner {
             int iv = 400;
+
         }
+        LocalInner li = new LocalInner();
+        System.out.println(li.iv);
     }
 }
 
@@ -30,5 +36,12 @@ class Ex7_15 {
         // 스태틱 내부 클래스의 인스턴스는 외부 클래스를 먼저 생성하지 않아도 된다.
         Outer2.StaticInner si = new Outer2.StaticInner();
         System.out.println("si.iv : "+ si.iv);
+        oc.myMethod();
+
+
+
+
+
+
     }
 }
