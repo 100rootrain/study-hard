@@ -6,15 +6,25 @@
     function HighLightTR(target, backColor,textColor) {
       let tbody = target.parentNode;
       let trs = tbody.getElementsByTagName('tr');
+
+      console.log('target : '+target.innerHTML);
+      console.log('tar : '+tbody.innerHTML);
+
+
+
       for ( let i = 0; i < trs.length; i++ ) {
+
         if ( trs[i] != target ) {
           trs[i].style.backgroundColor = orgBColor;
           trs[i].style.color = orgTColor;
+          console.log()
         } else {
           trs[i].style.backgroundColor = backColor;
           trs[i].style.color = textColor;
         }
       } // endfor i
+
+
     }
   </script>
 </head>

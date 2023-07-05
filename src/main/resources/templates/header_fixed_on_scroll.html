@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>header_fixed_on_scroll</title>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    width: 100%;
+    background: #333;
+    color:#ccc;
+    font-family: 'Roboto', sans-serif;
+  }
+  ul {
+    list-style: none;
+  }
+  a {
+    display:inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #333;
+    padding: 0 40px;
+    line-height:5rem;
+    height:5rem;
+  }
+  a:hover{
+    background:#444;
+    color:#ccc;
+  }
+  .header {
+    width: 100%;
+    height: 5rem;
+    background: #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .header ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .header.drop {
+    position: fixed;
+    animation: dropHeader 0.3s;
+  }
+
+  @keyframes dropHeader {
+    0% {
+      top: -5rem;
+    }
+    100% {
+      top: 0;
+    }
+  }
+
+</style>
+
+<body>
+<div class="header">
+  <ul>
+    <li><a href="">menu1</a></li>
+    <li><a href="">menu2</a></li>
+    <li><a href="">menu3</a></li>
+  </ul>
+</div>
+<div class="main">
+  <div class="section">
+    the header gets dropped and fixed on scroll down!
+  </div>
+  <div class="section">
+    the header gets position back on scroll up
+  </div>
+</div>
+
+
+<script>
+  let header = document.querySelector(".header");
+  let headerHeight = header.offsetHeight;
+
+  window.onscroll = function () {
+    let windowTop = window.scrollY;
+    // 스크롤 세로값이 헤더높이보다 크거나 같으면
+    // 헤더에 클래스 'drop'을 추가한다
+    if (windowTop >= headerHeight) {
+      header.classList.add("drop");
+    }
+    // 아니면 클래스 'drop'을 제거
+    else {
+      header.classList.remove("drop");
+    }
+  };
+</script>
+</body>
+</html>

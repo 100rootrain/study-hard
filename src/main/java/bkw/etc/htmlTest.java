@@ -30,6 +30,9 @@ public class htmlTest {
     @RequestMapping("/tdColorChange") //td 클릭시 색깔 변하게
     public String tdCg(){return "tdColorChange";}
 
+    @RequestMapping("/headerFixedOnScroll")
+    public String hfOs(){return "header_fixed_on_scroll";}
+
 
 
 }
