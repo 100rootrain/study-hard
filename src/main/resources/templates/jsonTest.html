@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body>
+
+</body>
+<script>
+  let param = [{'fruit1':'apple', 'fruit2':'banana'}];
+
+  $.ajax({
+    type:'post'
+    , contentType:'application/json'
+    , data: JSON.stringify(param)
+    , url: '/test'
+    , success: function(data) {
+      alert(JSON.stringify(data));
+    }, error:function(e) {
+      alert("error: " + e);
+    }
+  });
+
+</script>
+</html>

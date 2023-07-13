@@ -35,6 +35,8 @@ public class htmlTest {
 
     @RequestMapping("/contenteditable")
     public String cdcd(){return "contenteditable";}
+    @RequestMapping("/jsonTest")
+    public String jsts(){return "jsonTest";}
 
 
 
