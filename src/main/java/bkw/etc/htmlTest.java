@@ -33,6 +33,9 @@ public class htmlTest {
     @RequestMapping("/headerFixedOnScroll")
     public String hfOs(){return "header_fixed_on_scroll";}
 
+    @RequestMapping("/contenteditable")
+    public String cdcd(){return "contenteditable";}
+
 
 
 }

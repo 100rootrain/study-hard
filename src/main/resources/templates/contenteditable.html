@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>contenteditable</title>
+</head>
+<body>
+<p contenteditable="false">
+  이 단락은 편집을 원하는 경우 더블클릭해주세요.
+</p>
+</body>
+</html>
+
+<script>
+  content=document.querySelector("[contenteditable]");
+
+  document.addEventListener("DOMContentLoaded",function(){
+
+    content.addEventListener("dblclick",function(event){
+
+      if(content.isContentEditable ==false){
+        content.contentEditable = true;
+
+        content.textContent = "편집 가능한 상태로 변경되었습니다.";
+
+        content.style.border = "1px solid #FE7F9C";
+
+        content.focus();
+      }else{
+        content.contentEditable = false;
+        content.style.border = "0px";
+      }
+
+
+    });
+
+
+  });
+</script>
