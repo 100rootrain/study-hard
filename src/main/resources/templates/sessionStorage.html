@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sessionStorage.html</title>
+</head>
+<body>
+<div class="session">
+  <script>
+    function init(){
+      const session = document.querySelector('.session');
+      const json = {
+        id:'1',
+        name:'tom'
+      }
+      console.log(session);
+      sessionStorage.setItem('json',JSON.stringify(json));
+      const getJson = sessionStorage.getItem('json');
+
+      session.innerText = getJson
+      console.log('JSON.stringify(json.id) : ' + JSON.stringify(json.id));
+      console.log('JSON.stringify(json.name) : ' + JSON.stringify(json.name));
+    }
+
+    init();
+
+  </script>
+
+</div>
+</body>
+</html>

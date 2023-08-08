@@ -38,6 +38,9 @@ public class htmlTest {
     @RequestMapping("/jsonTest")
     public String jsts(){return "jsonTest";}
 
+    @RequestMapping("/sessionStorage")
+    public String sessionStorage(){return "sessionStorage";}
+
 
 
 }
