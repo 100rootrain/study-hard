@@ -7,10 +7,11 @@ public class Exercise7_2 {
 
 //        System.out.println(deck.pick(0));
 //        System.out.println(deck.pick());
-//        deck.shuffle();
+        deck.shuffle();
+        System.out.println();
 
         for(int i=0; i<deck.cards.length;i++){
-            System.out.println(deck.cards[i] + ",");
+            System.out.print(deck.cards[i] + ",");
         }
         System.out.println();
 //        System.out.println(deck.pick(0));

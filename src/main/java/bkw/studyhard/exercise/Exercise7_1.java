@@ -8,20 +8,19 @@ package bkw.studyhard.exercise;
 
 /**
  * 1.메서드명 : shuffle
- *   기능 : 배열 cards에 담긴 카드의 위치를 뒤섞는다.
- *   반환타입 : 없음
- *   매개변수 : 없음
- *
+ * 기능 : 배열 cards에 담긴 카드의 위치를 뒤섞는다.
+ * 반환타입 : 없음
+ * 매개변수 : 없음
+ * <p>
  * 2.메서드명 : pick
- *   기능 : 배열 cards에서 지정된 위치의 SutdaCard를 반환한다.
- *   반환타입 : SutdaCard
- *   매개변수 : int index  - 위치
- *
+ * 기능 : 배열 cards에서 지정된 위치의 SutdaCard를 반환한다.
+ * 반환타입 : SutdaCard
+ * 매개변수 : int index  - 위치
+ * <p>
  * 3.메서드명 : pick
- *   기능 : 배열 cards에서 임의의 위치를 StudaCard를 반환한다.
- *   반환타입 : SutdaCard
- *   매개변수 : djqtdma
- *
+ * 기능 : 배열 cards에서 임의의 위치를 StudaCard를 반환한다.
+ * 반환타입 : SutdaCard
+ * 매개변수 : djqtdma
  */
 class SutdaDeck {
     final int CARD_NUM = 20;
@@ -32,6 +31,12 @@ class SutdaDeck {
          * 배열 SutdaCard를 적절히 초기화 하시오.
          */
 
+        for(int i =0; i< cards.length; i++){
+            int num = i % 10 + 1;
+            boolean isKwang = (i < 10) && (num == 1 || num == 3 || num == 8);
+            cards[i] = new SutdaCard(num, isKwang);
+        }
+
     }
 
 
@@ -39,14 +44,33 @@ class SutdaDeck {
      * (1)위에 정의된 세 개의 메서드를 작성하시오.
      */
 
+    void shuffle(){
+        for(int i=0; i<cards.length; i++){
+            int j = (int) (Math.random()*cards.length);
+            SutdaCard tmp = cards[i];
+            cards[i] = cards[j];
+            cards[j] = tmp;
+        }
 
+        for(int i=0; i<cards.length; i++){
+            System.out.print(cards[i] +" ");
+        }
 
+    }
 
+    SutdaCard pick(int index){
+        if(index<0||index>=CARD_NUM)
+            return null;
+        return cards[index];
+    }
 
+    SutdaCard pick(){
+        int index = (int) (Math.random()*cards.length);
+        return cards[index];
+    }
 
 
 }
-
 
 
 class SutdaCard {
@@ -80,16 +104,13 @@ public class Exercise7_1 {
 
 /**
  * 결과 : 1k,2,3K,4,5,6,7,8K,9,10,1,2,3,4,5,6,7,8,9,10,
- *
- *
- *
- *
+
  * 답
- * for (int i = 0; i < cards.length; i++) {
- * int num = i % 10 + 1;
- * boolean isKwang = (i < 10) && (num == 1 || num == 3 || num == 8);
- * cards[i] = new SutdaCard(num, isKwang);
- *
- * }
+     for (int i = 0; i < cards.length; i++) {
+         int num = i % 10 + 1;
+         boolean isKwang = (i < 10) && (num == 1 || num == 3 || num == 8);
+         cards[i] = new SutdaCard(num, isKwang);
+
+     }
  */
 
