@@ -1,6 +1,7 @@
 package bkw.etc;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -41,6 +42,14 @@ public class htmlTest {
     @RequestMapping("/sessionStorage")
     public String sessionStorage(){return "sessionStorage";}
 
+    @RequestMapping("/gnb_vertical_test")
+    public String gnb_vertical_test(){return "gnb_vertical_test";}
+
+    @GetMapping("/asideSlideMenu")
+    public String asideSlideMenu(){return "AsideSlideMenu_withToggleSwitch_mouseoverEffect";}
+
+    @GetMapping("/slidebar")
+    public String slidebar(){return "slidebar";}
 
 
 }
