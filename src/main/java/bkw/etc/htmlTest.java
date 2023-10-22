@@ -51,5 +51,8 @@ public class htmlTest {
     @GetMapping("/slidebar")
     public String slidebar(){return "slidebar";}
 
+    @GetMapping("/fmKoreaGnb")
+    public String fmKoreaGnb(){return "fmKoreaGnb";}
+
 
 }
