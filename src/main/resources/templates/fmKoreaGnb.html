@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
+
 <style>
-    .mpReset,.mpReset * {
+    nav {
+        display: block;
+    }
+
+    .mpReset, .mpReset * {
         margin: 0;
         padding: 0;
         list-style: none;
@@ -31,18 +39,21 @@
         padding: 0 5px 0 0
     }
 
+    /*목록1*/
     #gnb ul.ul1 {
         height: 35px;
         padding: 0 0 0 15px;
-        background: url(img/gnb.png) no-repeat
+        /*background: url(img/gnb.png) no-repeat*/
     }
 
+    /*목록1 리스트아이템 활성화 위치*/
     #gnb .li1 {
         display: inline;
         float: left;
         position: relative;
         padding: 0 3px 0 0;
-        background: url(img/li1.gif) no-repeat 100% 50%
+        /*background: url(img/li1.gif) no-repeat 100% 50%*/
+
     }
 
     #gnb .a1 {
@@ -54,7 +65,7 @@
         text-decoration: none
     }
 
-    #gnb .a1:focus,#gnb .a1:hover,#gnb .on1 .a1 {
+    #gnb .a1:focus, #gnb .a1:hover, #gnb .on1 .a1 {
         background: #3e60a6;
         color: #f7f762
     }
@@ -62,8 +73,10 @@
     #gnb .a1 span {
         display: inline-block;
         letter-spacing: 1px;
-        font: bold 13px 'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',arial,sans-serif
+        font: bold 13px 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', arial, sans-serif
     }
+
+    /*두번째 ul2 목록 css 시작*/
 
     #gnb div.ul2 {
         display: none;
@@ -75,7 +88,8 @@
         background: #fff
     }
 
-    #gnb .li1:hover div.ul2,#gnb .li1_on div.ul2 {
+    /*li1 hover시 div.ul2 block처리 : 목록박스를 보여줌  */
+    #gnb .li1:hover div.ul2, #gnb .li1_on div.ul2 {
         display: block
     }
 
@@ -87,14 +101,14 @@
         border: 0
     }
 
-    #gnb .ul2 .a2,#gnb .ul2 .on2 .a2 {
+    #gnb .ul2 .a2, #gnb .ul2 .on2 .a2 {
         display: block;
         color: #333;
         text-decoration: none;
         padding: 0 5px 0 7px
     }
 
-    #gnb .ul2 .a2:focus,#gnb .ul2 .a2:hover,#gnb .ul2 .on2 .a2 {
+    #gnb .ul2 .a2:focus, #gnb .ul2 .a2:hover, #gnb .ul2 .on2 .a2 {
         color: #456bc1;
         background: #eff4fc
     }
@@ -102,7 +116,7 @@
     #gnb .ul2 .a2 span {
         display: block;
         padding: 9px 3px 6px;
-        font: 13px 'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',arial,sans-serif;
+        font: 13px 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', arial, sans-serif;
         line-height: 11px;
         white-space: nowrap
     }
@@ -112,7 +126,7 @@
         visibility: hidden
     }
 
-    #gnb .li1:hover .ul2,#gnb .li1_on .ul2 {
+    #gnb .li1:hover .ul2, #gnb .li1_on .ul2 {
         visibility: visible
     }
 
@@ -127,7 +141,7 @@
         float: left
     }
 
-    #gnb .menu_ext_mid .a2,#gnb .menu_ext_mid .a2 span {
+    #gnb .menu_ext_mid .a2, #gnb .menu_ext_mid .a2 span {
         display: inline;
         margin: 0;
         padding: 0;
@@ -140,10 +154,10 @@
 
     #gnb .menu_ext_mid .a2 {
         margin: 0 0 0 13px;
-        background: 0 0!important
+        background: 0 0 !important
     }
 
-    #gnb .menu_ext_mid .on2 .a2,#gnb .menu_ext_mid a.a2:focus,#gnb .menu_ext_mid a.a2:hover {
+    #gnb .menu_ext_mid .on2 .a2, #gnb .menu_ext_mid a.a2:focus, #gnb .menu_ext_mid a.a2:hover {
         padding: 0;
         background: 0 0;
         text-decoration: underline
@@ -154,43 +168,184 @@
         border: 0
     }
 
+    /* 목표 : ul2 의 li2를 hover 했을대 우측에 박스로 나타나야된다.
+     * 3번째 ul css : */
+    /******************************************************************************/
+
+    /* 요소를 자기 기준으로 배치 : ul3, li3를 위치에 맞게 배치하기위해 */
+    #gnb .ul2 .li2 {
+        position: relative;
+    }
+
+    #gnb .a3 {
+        float: left;
+        height: 26px;
+        overflow: hidden;
+        color: #f3f3f3;
+        padding: 9px 10px 0;
+        text-decoration: none
+    }
+
+/*
+    #gnb .a3:focus, #gnb .a3:hover, #gnb .on3 .a3 {
+        background: #3e60a6;
+        color: #f7f762
+    }
+*/
+
+    #gnb .a3 span {
+        display: inline-block;
+        letter-spacing: 1px;
+        font: bold 13px 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', arial, sans-serif
+    }
+
+
+    #gnb div.ul3 {
+        display: none; /*li2 hover시 조회되도록*/
+        position: absolute; /*부모요소를 기준으로 배치*/
+        left: 100%;
+        top: -4.5%;
+        border: 1px solid #456bc1;
+        background: #fff
+    }
+
+
+    /*li2 hover시 div.ul3 block처리 : 목록박스를 보여줌  */
+    #gnb .li2:hover div.ul3, #gnb .li2_on div.ul3 {
+        display: block
+    }
+
+
+    div.ul3 .ul3 .li3 {
+        border-bottom: 1px dotted #ccc;
+        padding-bottom: 32%; /* 여유 공간 추가 */
+    }
+
+    div.ul3 .ul3 .li3:last-child {
+        border: 0
+    }
+
+    #gnb .ul3 .a3, .ul3 .on3 .a3 {
+        display: block;
+        color: #333;
+        text-decoration: none;
+        padding: 0 5px 0 7px
+    }
+
+    #gnb .ul3 .a3:focus, .ul3 .a3:hover, .ul3 .on3 .a3 {
+        color: #456bc1;
+        background: #eff4fc
+    }
+
+    #gnb .ul3 .a3 span {
+        display: block;
+        padding: 9px 3px 6px;
+        font: 13px 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', arial, sans-serif;
+        line-height: 11px;
+        white-space: nowrap
+    }
+
+    #gnb .menu_ext_mid .ul3 {
+        display: block;
+        visibility: hidden
+    }
+
+    #gnb .li2:hover .ul3, .li2_on .ul3 {
+        visibility: visible
+    }
+
     #gnb .menu_ext_mid div.ul3 {
+        border: 2px solid #456bc1;
+        border-top: 0;
+        padding: 7px 0;
+        box-shadow: inset 0 1px 2px #88acff
+    }
+
+    #gnb .menu_ext_mid .li3 {
+        float: left
+    }
+
+    #gnb .menu_ext_mid .a3, .menu_ext_mid .a3 span {
+        display: inline;
+        margin: 0;
+        padding: 0;
+        color: #456bc1;
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration: none;
+        letter-spacing: 1px
+    }
+
+    #gnb .menu_ext_mid .a3 {
+        margin: 0 0 0 13px;
+        background: 0 0 !important
+    }
+
+    #gnb .menu_ext_mid .on3 .a3, .menu_ext_mid a.a3:focus, .menu_ext_mid a.a3:hover {
+        padding: 0;
+        background: 0 0;
+        text-decoration: underline
+    }
+
+    #gnb .menu_ext_mid .li3 {
+        float: left;
+        border: 0
+    }
+
+
+
+
+    /*******************************************************************************/
+
+
+    #gnb .menu_ext_mid /*div.ul3*/
+    {
         padding: 0 13px;
         border-right: 1px dashed #a2b5e0
     }
 
-    #gnb .menu_ext_mid .li2:last-child div.ul3 {
+    #gnb .menu_ext_mid .li2:last-child /*div.ul3*/
+    {
         border: 0
     }
 
-    #gnb .menu_ext_mid .li3 {
+    #gnb .menu_ext_mid /*.li3*/
+    {
         display: block;
         padding: 7px 0 0
     }
 
-    #gnb .menu_ext_mid .li3 .a3 {
+    #gnb .menu_ext_mid /*.li3 .a3*/
+    {
         white-space: nowrap;
         color: #444;
         text-decoration: none
     }
 
-    #gnb .menu_ext_mid .on3 .a3 {
+    #gnb .menu_ext_mid .on3 /*.a3 */
+    {
         color: #456bc1
     }
 
-    #gnb .menu_ext_mid .on3 .a3:before {
+    #gnb .menu_ext_mid .on3 . /*a3:before*/
+    {
         content: "> "
     }
 
-    #gnb .menu_ext_mid .li3 .a3:focus,#gnb .menu_ext_mid .li3 .a3:hover {
+    /*
+    #gnb .menu_ext_mid .li3 .a3:focus, #gnb .menu_ext_mid .li3 .a3:hover {
         color: #456bc1;
         text-decoration: underline;
         background: 0 0
     }
 
+
+
     #gnb .menu_ext_mid .li3 .a3 span {
-        font: 13px 'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',arial,sans-serif
+        font: 13px 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', arial, sans-serif
     }
+
+    */
 
     #gnb .li_bookmark {
         float: right;
@@ -210,225 +365,145 @@
         float: right
     }
 </style>
-<body>
+<script>
+    $(document).ready(function () {
 
+        var $gnb = $("#gnb");
+        $gnb.find("li:has(ul)").addClass("sub").children("a").addClass("sub");
+        var is_mobile = function () {
+            return "ontouchstart" in window
+        };
+        $gnb.find(".li1").on("mouseenter", function () {
+            if (!is_mobile())
+                $(this).addClass("li1_on")
+        }).on("mouseleave", function () {
+            $(this).removeClass("li1_on")
+        });
+        $gnb.find(".li1").on("touchstart", function (e) {
+            "use strict";
+            var link = $(this);
+            if (link.hasClass("li1_on")) {
+                return true
+            } else {
+                link.addClass("li1_on");
+                $gnb.find(".li1").not(this).removeClass("li1_on");
+                e.preventDefault();
+                return false
+            }
+        });
+        $gnb.find(".menu_ext_mid div.ul2").each(function () {
+            var outerWidth = 0;
+            var outerHiehgt = 0;
+            $(".li2", this).each(function () {
+                $(this).width($(this).width());
+                var width = $(this).width() + parseInt($(this).css("paddingLeft")) + parseInt($(this).css("paddingRight")) + 1;
+                var height = $(this).height();
+                outerWidth += width;
+                outerHiehgt = outerHiehgt > height ? outerHiehgt : height
+            });
+            outerWidth--;
+            $(this).width(outerWidth);
+            $(".li2", this).height(outerHiehgt)
+        });
+        $(document).on("click", function (e) {
+            if ($(e.target).parents("#gnb").length || $(e.target).is("#gnb")) {
+                return
+            }
+            $("#gnb .li1.li1_on").removeClass("li1_on")
+        });
+
+    });
+
+
+</script>
+<body>
+<!--네비게이션시작-->
 <nav id="gnb" class="mpReset">
+    <!--1번째 순서없는목록(ul)시작-->
     <div class="ul1">
         <ul class="ul1">
-            <li class="li1 sub"><a href="/" class="a1 sub"><span>포텐터짐</span></a>
+            <li class="li1">
+                <a href="/" class="a1">
+                    <span>항목1</span>
+                </a>
+
+                <!----2번째 목록시작[block 으로 활성화되는 부분]---->
                 <div class="ul2">
                     <ul class="ul2">
-                        <li class="li2 "><a href="/best" class="a2"><span>포텐 터짐 최신순</span></a></li>
-                        <li class="li2 "><a href="/best2" class="a2"><span>포텐 터짐 화제순</span></a></li>
-                        <li class="li2 "><a href="/index.php?mid=humor&amp;sort_index=pop&amp;order_type=desc"
-                                            class="a2"><span>- 유머/이슈 인기글</span></a></li>
-                        <li class="li2 "><a href="/index.php?mid=football_news&amp;sort_index=pop&amp;order_type=desc"
-                                            class="a2"><span>- 축구 소식 인기글</span></a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="li1 sub"><a href="/humor" class="a1 sub"><span>유머/정보</span></a>
-                <div class="ul2">
-                    <ul class="ul2">
-                        <li class="li2 "><a href="/humor" class="a2"><span>유머/움짤/이슈</span></a></li>
-                        <li class="li2 "><a href="/politics" class="a2"><span>정치/시사</span></a></li>
-                        <li class="li2 "><a href="/mystery" class="a2"><span>미스터리/공포</span></a></li>
-                        <li class="li2 "><a href="/digital" class="a2"><span>디지털/컴퓨터/폰</span></a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="li1 sub"><a href="/football_news" class="a1 sub"><span>스포츠</span></a>
-                <div class="ul2">
-                    <ul class="ul2">
-                        <li class="li2 "><a href="/football_news" class="a2"><span>축구 소식통</span></a></li>
-                        <li class="li2 "><a href="/football_world" class="a2"><span>해외축구</span></a></li>
-                        <li class="li2 "><a href="/football_korean" class="a2"><span>국내축구</span></a></li>
-                        <li class="li2 "><a href="/baseball" class="a2"><span>야구</span></a></li>
-                        <li class="li2 "><a href="/basketball" class="a2"><span>농구</span></a></li>
-                        <li class="li2 "><a href="/other_sports" class="a2"><span>기타스포츠</span></a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="li1 sub"><a href="/hotdeal" class="a1 sub"><span>쇼핑/투자</span></a>
-                <div class="ul2">
-                    <ul class="ul2">
-                        <li class="li2 "><a href="/hotdeal" class="a2"><span>핫딜</span></a></li>
-                        <li class="li2 "><a href="/stock" class="a2"><span>주식</span></a></li>
-                        <li class="li2 "><a href="/coin" class="a2"><span>가상화폐</span></a></li>
-                        <li class="li2 "><a href="/realestate" class="a2"><span>부동산</span></a></li>
-                        <li class="li2 "><a href="/freedeal" class="a2"><span>자유쇼핑</span></a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="li1 sub"><a href="/afreecatv" class="a1 sub"><span>일반</span></a>
-                <div class="ul2">
-                    <ul class="ul2">
-                        <li class="li2 "><a href="/afreecatv" class="a2"><span>아프리카TV</span></a></li>
-                        <li class="li2 "><a href="/ib" class="a2"><span>인터넷방송</span></a></li>
-                        <li class="li2 "><a href="/starcraft" class="a2"><span>스타크래프트</span></a></li>
-                        <li class="li2 "><a href="/movietv" class="a2"><span>영화/TV</span></a></li>
-                        <li class="li2 "><a href="/hiphop" class="a2"><span>힙합</span></a></li>
-                        <li class="li2 "><a href="/vtuber" class="a2"><span>버튜버</span></a></li>
-                        <li class="li2 "><a href="/assapig" class="a2"><span>운동/건강/아싸</span></a></li>
-                        <li class="li2 "><a href="/mangawebtoon" class="a2"><span>웹툰/웹소설/만화</span></a></li>
-                        <li class="li2 "><a href="/personacon" class="a2"><span>프로필/로고</span></a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="li1 menu_ext_mid sub"><a href="/lol" class="a1 sub"><span>게임</span></a>
-                <div class="ul2" style="width: 193.125px;">
-                    <ul class="ul2">
-                        <li class="li2 sub" style="width: 96.5781px; height: 257px;"><span class="a2"><span>PC/기타</span></span>
+                        <li class="li2 ">
+                            <a href="/best" class="a2">
+                                <span>리스트1</span>
+                            </a>
+
                             <div class="ul3">
                                 <ul class="ul3">
-                                    <li class="li3 menu_ext_mid"><a href="/lol" class="a3"><span>LoL</span></a></li>
-                                    <li class="li3 "><a href="/lostark" class="a3"><span>로스트아크</span></a></li>
-                                    <li class="li3 "><a href="/other_game" class="a3"><span>PC/콘솔</span></a></li>
-                                    <li class="li3 "><a href="/maple" class="a3"><span>메이플</span></a></li>
-                                    <li class="li3 "><a href="/pokemon" class="a3"><span>포켓몬</span></a></li>
-                                    <li class="li3 "><a href="/df" class="a3"><span>던파</span></a></li>
-                                    <li class="li3 "><a href="/tft" class="a3"><span>TFT</span></a></li>
-                                    <li class="li3 "><a href="/diablo" class="a3"><span>디아블로</span></a></li>
-                                    <li class="li3 "><a href="/gersang" class="a3"><span>거상</span></a></li>
-                                    <li class="li3 "><a href="/eternalreturn" class="a3"><span>이터널 리턴</span></a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="li2 sub" style="width: 95.5781px; height: 257px;"><span
-                                class="a2"><span>모바일</span></span>
-                            <div class="ul3">
-                                <ul class="ul3">
-                                    <li class="li3 "><a href="/genshin" class="a3"><span>원신</span></a></li>
-                                    <li class="li3 "><a href="/baramy" class="a3"><span>바람:연</span></a></li>
-                                    <li class="li3 "><a href="/starrail" class="a3"><span>스타레일</span></a></li>
-                                    <li class="li3 "><a href="/uma" class="a3"><span>우마무스메</span></a></li>
-                                    <li class="li3 "><a href="/mgame" class="a3"><span>모바일게임</span></a></li>
-                                    <li class="li3 "><a href="/gf" class="a3"><span>소녀전선</span></a></li>
-                                    <li class="li3 "><a href="/df_mobile" class="a3"><span>던파 모바일</span></a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="li1 menu_ext_mid sub"><a href="/fashion" class="a1 sub"><span>커뮤니티</span></a>
-                <div class="ul2" style="width: 232.485px;">
-                    <ul class="ul2">
-                        <li class="li2 sub" style="width: 115.297px; height: 137px;"><span
-                                style="display:block; height:1px; margin:-8px 0 0;"></span>
-                            <div class="ul3">
-                                <ul class="ul3">
-                                    <li class="li3 menu_ext_mid"><a href="/fashion" class="a3"><span>패션</span></a></li>
-                                    <li class="li3 "><a href="/love" class="a3"><span>연애상담</span></a></li>
-                                    <li class="li3 "><a href="/car" class="a3"><span>자동차</span></a></li>
-                                    <li class="li3 "><a href="/free" class="a3"><span>자유</span></a></li>
-                                    <li class="li3 "><a href="/job" class="a3"><span>직장/알바/사업</span></a></li>
-                                    <li class="li3 "><a href="/study" class="a3"><span>공부</span></a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="li2 sub" style="width: 116.203px; height: 137px;"><span
-                                style="display:block; height:1px; margin:-8px 0 0;"></span>
-                            <div class="ul3">
-                                <ul class="ul3">
-                                    <li class="li3 "><a href="/notice" class="a3"><span>공지</span></a></li>
-                                    <li class="li3 "><a href="/suggest" class="a3"><span>문의/신고</span></a></li>
-                                    <li class="li3 "><a href="/suggestaftv" class="a3"><span>앞TV 문의/신고</span></a></li>
-                                    <li class="li3 "><a href="/suggest2" class="a3"><span>건의 게시판</span></a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="li1 sub"><a href="/starfree" class="a1 sub"><span>갤러리</span></a>
-                <div class="ul2">
-                    <ul class="ul2">
-                        <li class="li2 "><a href="/starfree" class="a2"><span>연예인잡담</span></a></li>
-                        <li class="li2 "><a href="/food" class="a2"><span>음식/여행</span></a></li>
-                        <li class="li2 "><a href="/subculture" class="a2"><span>오덕양성소</span></a></li>
-                        <li class="li2 "><a href="/girlgroup" class="a2"><span>걸그룹</span></a></li>
-                        <li class="li2 "><a href="/girlstar" class="a2"><span>여자연예인</span></a></li>
-                        <li class="li2 "><a href="/animal" class="a2"><span>동물/식물</span></a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="li1 menu_ext_mid sub"><a href="/fm24free" class="a1 sub"><span>풋볼매니저</span></a>
-                <div class="ul2" style="width: 281.438px;">
-                    <ul class="ul2">
-                        <li class="li2 menu_ext_mid sub" style="width: 165.891px; height: 257px;"><a href="/fm24free"
-                                                                                                     class="a2 sub"><span>FM2024</span></a>
-                            <div class="ul3">
-                                <ul class="ul3">
-                                    <li class="li3 menu_ext_mid"><a href="/fm24free" class="a3"><span>에펨자유</span></a>
+                                    <li class="li3">
+                                        <a href="/happy" class="a3">
+                                            <span>리스트1-1</span>
+                                        </a>
                                     </li>
-                                    <li class="li3 "><a href="/6294079487" class="a3"><span>[2024자료안내]</span></a></li>
-                                    <li class="li3 "><a href="/1598251840" class="a3"><span>[통합][패치 자동설치]</span></a>
+                                    <li class="li3">
+                                        <a href="/happy" class="a3">
+                                            <span>리스트1-2</span>
+                                        </a>
                                     </li>
-                                    <li class="li3 "><a href="/fmfacepack" class="a3"><span>[통합]그래픽 패치</span></a></li>
-                                    <li class="li3 "><a href="/fmm" class="a3"><span>[통합]모바일/FMM/FMT</span></a></li>
-                                    <li class="li3 "><a href="/fm24data" class="a3"><span>스킨/일반자료</span></a></li>
-                                    <li class="li3 "><a href="/fm24tactic" class="a3"><span>전술자료실</span></a></li>
-                                    <li class="li3 "><a href="/fm24tqna" class="a3"><span>전술토론</span></a></li>
-                                    <li class="li3 "><a href="/fm24players" class="a3"><span>선수/스탭</span></a></li>
-                                    <li class="li3 "><a href="/fm24tips" class="a3"><span>플레이팁</span></a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="li2 sub" style="width: 114.562px; height: 257px;"><a href="/fm23free" class="a2 sub"><span>FM2023</span></a>
-                            <div class="ul3">
-                                <ul class="ul3">
-                                    <li class="li3 "><a href="/fm23free" class="a3"><span>에펨자유</span></a></li>
-                                    <li class="li3 "><a href="/5129508876" class="a3"><span>[2023자료안내]</span></a></li>
-                                    <li class="li3 "><a href="/fm23data" class="a3"><span>스킨/일반자료</span></a></li>
-                                    <li class="li3 "><a href="/fm23tactic" class="a3"><span>전술자료실</span></a></li>
-                                    <li class="li3 "><a href="/fm23tqna" class="a3"><span>전술토론</span></a></li>
-                                    <li class="li3 "><a href="/fm23players" class="a3"><span>선수/스탭</span></a></li>
-                                    <li class="li3 "><a href="/fm23tips" class="a3"><span>플레이팁</span></a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="li1 sub"><a href="/fifa_series" class="a1 sub"><span>FC</span></a>
-                <div class="ul2">
-                    <ul class="ul2">
-                        <li class="li2 "><a href="/fifa_series" class="a2"><span>EA FC시리즈</span></a></li>
-                        <li class="li2 "><a href="/fifa_online" class="a2"><span>EA FC온라인</span></a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="li1 menu_ext_mid sub"><a href="/newboard" class="a1 sub"><span>2군</span></a>
-                <div class="ul2" style="width: 136.141px;">
-                    <ul class="ul2">
-                        <li class="li2 sub" style="width: 136.156px; height: 17px;"><span
-                                style="display:block; height:1px; margin:-8px 0 0;"></span>
-                            <div class="ul3">
-                                <ul class="ul3">
-                                    <li class="li3 menu_ext_mid"><a href="/newboard" class="a3"><span>2군, 구게시판 목록</span></a>
+                                    <li class="li3">
+                                        <a href="/happy" class="a3">
+                                            <span>리스트1-3</span>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
+
+
+                        </li>
+
+                        <li class="li2 ">
+                            <a href="/index.php" class="a2">
+                                <span>리스트2</span>
+                            </a>
+
+                            <!--3번째 ul 시작-->
+
+                            <div class="ul3">
+                                <ul class="ul3">
+                                    <li class="li3">
+                                        <a href="/happy" class="a3">
+                                            <span>리스트2-1</span>
+                                        </a>
+                                    </li>
+                                    <li class="li3">
+                                        <a href="/happy" class="a3">
+                                            <span>리스트2-2</span>
+                                        </a>
+                                    </li>
+                                    <li class="li3">
+                                        <a href="/happy" class="a3">
+                                            <span>리스트2-3</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--3번째 ul 시작///-->
+
+
+                        </li>
+
+                        <li class="li2 ">
+                            <a href="/best" class="a2">
+                                <span>리스트3</span>
+                            </a>
+                        </li>
+                        <li class="li2 ">
+                            <a href="/best" class="a2">
+                                <span>리스트4</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
+                <!----2번째 목록시작[block 으로 활성화되는 부분////]---->
             </li>
-            <li class="li1 li_bookmark sub"><a class="a1 sub" href="/index.php?act=dispMemberBookmark"><span>바로가기</span></a>
-                <div class="ul2">
-                    <ul class="ul2">
-                        <li class="li2"><a class="a2" href="/index.php?act=dispMemberBookmark"><span>설정하기</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="li1 li_bookmark2 sub"><a href="/board" class="a1 sub"><span>전체 게시판</span></a>
-                <div class="ul2">
-                    <ul class="ul2">
-                        <li class="li2"><a href="/board" class="a2"><span>전체 게시판 목록</span></a></li>
-                    </ul>
-                </div>
-            </li>
+
         </ul>
     </div>
     <hr>
