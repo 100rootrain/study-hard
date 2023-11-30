@@ -186,6 +186,7 @@ $(document).ready(function() {
       x = e.clientX; // 이벤트가 발생한 애플리케이션 내의 수평좌표
 
       const styles = window.getComputedStyle(col[0]); // 해당 열에 적용된 모든 스타일을 가져와서  styles에 저장
+      //col[0] 인이유 ? 클릭은 한번에 한번밖에 안일어나니깐.
       w = parseInt(styles.width, 10);
 
       $(document).on('mousemove', mouseMoveHandler); // 마우스 눌렀을때

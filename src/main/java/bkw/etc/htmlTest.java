@@ -70,5 +70,9 @@ public class htmlTest {
     @GetMapping("/tableResize")
     public String table_resize(){return "resize_table_column";}
 
+    @GetMapping("/tableResize2")
+    public String table_resize2(){return "resize_table_column2";}
+
+
 
 }
