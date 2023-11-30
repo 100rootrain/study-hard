@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            margin: 100px auto;
+            max-width: 500px;
+        }
+
+        .container table {
+            width: 100%;
+        }
+
+        .container table th, table td {
+            border: 1px solid #ddd;
+        }
+
+        .container table th {
+            background: green;
+            color: #fff;
+        }
+
+        .container table thead {//
+            float: left;
+        }
+
+        .container table thead tr,
+        .container table thead tr th {
+            display: block; //
+        }
+
+        .container table tbody {//
+            display: block;
+            oveflow-x: hidden;
+            white-space: nowrap;
+        }
+
+        .container table tbody tr {//
+            display: inline-block;
+        }
+
+        .container table tbody tr td {//
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <table>
+        <thead>
+        <tr>
+            <th>th1</th>
+            <th>th2</th>
+            <th>th3</th>
+            <th>th4</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+            <td>td4</td>
+        </tr>
+        <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+            <td>td4</td>
+        </tr>
+        <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+            <td>td4</td>
+        </tr>
+        <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+            <td>td4</td>
+        </tr>
+        <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+            <td>td4</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

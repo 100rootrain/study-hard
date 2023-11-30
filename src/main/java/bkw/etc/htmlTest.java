@@ -54,5 +54,21 @@ public class htmlTest {
     @GetMapping("/fmKoreaGnb")
     public String fmKoreaGnb(){return "fmKoreaGnb";}
 
+    /**
+     * 테이블 행 열 반대로(모바일 참고)
+     *
+     * @return the string
+     */
+    @GetMapping("/tableOpposite")
+    public String table_opposite(){return "table_opposite";}
+
+    /**
+     * 테이블 열(사이즈 줄이고 늘리고)
+     *
+     * @return the string
+     */
+    @GetMapping("/tableResize")
+    public String table_resize(){return "resize_table_column";}
+
 
 }

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .table {
+      border-collapse: collapse;
+    }
+    .table,
+    .table th,
+    .table td {
+      border: 1px solid #ccc;
+    }
+    .table th,
+    .table td {
+      padding: 0.5rem;
+    }
+    .table th {
+      position: relative;
+    }
+    .resizer {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 5px;
+      cursor: col-resize;
+      user-select: none;
+    }
+    .resizer:hover,
+    .resizing {
+      border-right: 2px solid blue;
+    }
+
+    .resizable {
+      border: 1px solid rgb(128, 128, 128);
+      height: 100px;
+      width: 100px;
+      position: relative;
+    }
+
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+<table id="resizeMe" class="table">
+  <thead>
+  <tr>
+    <th>No.</th>
+    <th>First name</th>
+    <th>Last name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>1</td>
+    <td>Andrea</td>
+    <td>Ross</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Penelope</td>
+    <td>Mills</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Sarah</td>
+    <td>Grant</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Vanessa</td>
+    <td>Roberts</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Oliver</td>
+    <td>Alsop</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Jennifer</td>
+    <td>Forsyth</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>Michelle</td>
+    <td>King</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>Steven</td>
+    <td>Kelly</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>Julian</td>
+    <td>Ferguson</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>Chloe</td>
+    <td>Ince</td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+<script>
+/*
+document.addEventListener('DOMContentLoaded', function () {
+    const createResizableTable = function (table) {
+      const cols = table.querySelectorAll('th'); // 모든 th 선택
+      [].forEach.call(cols, function (col) { // cols 안에 있는 각각의 th를 col변수로 차례대로 받아옴 , th요소가 col변수로써 함수 내부에서 사용
+        // Add a resizer element to the column
+        const resizer = document.createElement('div');
+        resizer.classList.add('resizer');// <div class="resizer></div>
+
+        // Set the height
+        resizer.style.height = table.offsetHeight + 'px'; //<div class="resizer" style="height: px></div>"
+
+        col.appendChild(resizer); // col(th)
+
+        createResizableColumn(col, resizer);
+      });
+    };
+
+    const createResizableColumn = function (col, resizer) {
+      let x = 0;
+      let w = 0;
+
+      const mouseDownHandler = function (e) {
+        x = e.clientX; // 이벤트가 발생한 애플리케이션 내의 수평좌표
+
+        const styles = window.getComputedStyle(col); // 해당 열에 적용된 모든 스타일을 갖고와서  styles에 저장
+        w = parseInt(styles.width, 10);
+
+        document.addEventListener('mousemove', mouseMoveHandler); // 마우스 눌렀을때
+        document.addEventListener('mouseup', mouseUpHandler); // 마우스 뗐을때
+
+        resizer.classList.add('resizing'); // div class에 resizing 추가
+      };
+
+      const mouseMoveHandler = function (e) { //마우스 눌렀을때
+        const dx = e.clientX - x;
+        col.style.width = (w + dx) + 'px';
+      };
+
+      const mouseUpHandler = function () { // 마우스 똈을때
+        resizer.classList.remove('resizing');
+        document.removeEventListener('mousemove', mouseMoveHandler);
+        document.removeEventListener('mouseup', mouseUpHandler);
+      };
+
+      resizer.addEventListener('mousedown', mouseDownHandler);
+    };
+
+    createResizableTable(document.getElementById('resizeMe'));
+  });
+*/
+
+$(document).ready(function() {
+  const createResizableTable = function(table) {
+    const cols = $(table).find('th'); // 모든 th 선택
+    cols.each(function() {
+      const col = $(this);
+      // Add a resizer element to the column
+      const resizer = $('<div class="resizer"></div>');
+
+      // Set the height
+      resizer.css('height', $(table).outerHeight() + 'px');
+
+      col.append(resizer); // col(th)
+
+      createResizableColumn(col, resizer);
+    });
+  };
+
+  const createResizableColumn = function(col, resizer) {
+    let x = 0;
+    let w = 0;
+
+    const mouseDownHandler = function(e) {
+      x = e.clientX; // 이벤트가 발생한 애플리케이션 내의 수평좌표
+
+      const styles = window.getComputedStyle(col[0]); // 해당 열에 적용된 모든 스타일을 가져와서  styles에 저장
+      w = parseInt(styles.width, 10);
+
+      $(document).on('mousemove', mouseMoveHandler); // 마우스 눌렀을때
+      $(document).on('mouseup', mouseUpHandler); // 마우스 뗐을때
+
+      resizer.addClass('resizing'); // div class에 resizing 추가
+    };
+
+    const mouseMoveHandler = function(e) { //마우스 눌렀을때
+      const dx = e.clientX - x;
+      col.width(w + dx);
+    };
+
+    const mouseUpHandler = function() { // 마우스 똈을때
+      resizer.removeClass('resizing');
+      $(document).off('mousemove', mouseMoveHandler);
+      $(document).off('mouseup', mouseUpHandler);
+    };
+
+    resizer.on('mousedown', mouseDownHandler);
+  };
+
+  createResizableTable('#resizeMe');
+});
+</script>
+</html>
