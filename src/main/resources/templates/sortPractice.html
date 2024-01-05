@@ -9,64 +9,64 @@
 </body>
 <script>
 
-    // 오름차순정렬 (숫자)
-    let arr = [1, 5, 4, 2, 3];
-    arr.sort();
-    console.log(arr);    // [1, 2, 3, 4, 5]
+// 오름차순정렬 (숫자)
+let arr = [1, 5, 4, 2, 3];
+arr.sort();
+console.log(arr);    // [1, 2, 3, 4, 5]
 
-    // 오름차순정렬 (영어)
-    let arr1 = ["a", "c", "d", "e", "b"];
-    arr1.sort();
-    console.log(arr1);
+// 오름차순정렬 (영어)
+let arr1 = ["a", "c", "d", "e", "b"];
+arr1.sort();
+console.log(arr1);
 
-    // 오름차순 정렬 (결과가 이상하게 나옴)
-    let arr2 = [27, 8, 5, 13];
-    arr2.sort();
-    console.log(arr2);    // [13, 27, 5, 8]
+// 오름차순 정렬 (결과가 이상하게 나옴)
+let arr2 = [27, 8, 5, 13];
+arr2.sort();
+console.log(arr2);    // [13, 27, 5, 8]
 
-    // 오름차순 정렬
-    arr2.sort(function (a, b) {
-        return a - b;
-    })
-    console.log(arr2); // [5, 8, 13, 27]
+// 오름차순 정렬
+arr2.sort(function (a, b) {
+    return a - b;
+})
+console.log(arr2); // [5, 8, 13, 27]
 
-    //화살표 함수를 통한 간소화
-    arr2.sort((a, b) => a - b);
-    console.log(arr2); // [5, 8, 13, 27]
+//화살표 함수를 통한 간소화
+arr2.sort((a, b) => a - b);
+console.log(arr2); // [5, 8, 13, 27]
 
-    // 내림차순정렬
-    arr2.sort(function (a, b) {
-        return b - a;
-    })
-    console.log(arr2);
+// 내림차순정렬
+arr2.sort(function (a, b) {
+    return b - a;
+})
+console.log(arr2); //[27, 13, 8, 5]
 
-    //화살표 함수를 통한 간소화
-    arr2.sort((a, b) => b - a);
-    console.log(arr2);
+//화살표 함수를 통한 간소화
+arr2.sort((a, b) => b - a);
+console.log(arr2); // [27, 13, 8, 5]
 
-    // revers()를 이용한 내림차순
-    const num = [2, 6, 4, 7, 1]
-    const des = num.sort().reverse(); // sort()로 오름차순 후 reverse()로 배열의 순서를 반대로 뒤집음
-    console.log(des)
+// reverse()를 이용한 내림차순
+const num = [2, 6, 4, 7, 1]
+const des = num.sort().reverse(); // sort()로 오름차순 후 reverse()로 배열의 순서를 반대로 뒤집음
+console.log(des) // [7, 6, 4, 2, 1]
 
-    /*
-        [프로그래머스] 정수 내림차순으로 배치하기
+/*
+    [프로그래머스] 정수 내림차순으로 배치하기
 
-        <문제 설명>
-        함수 solution은 정수 n을 매개변수로 입력받습니다. n의 각 자릿수를 큰것부터 작은 순으로 정렬한 새로운 정수를 리턴해주세요. 예를들어 n이 118372면 873211을 리턴하면 됩니다.
+    <문제 설명>
+    함수 solution은 정수 n을 매개변수로 입력받습니다. n의 각 자릿수를 큰것부터 작은 순으로 정렬한 새로운 정수를 리턴해주세요. 예를들어 n이 118372면 873211을 리턴하면 됩니다.
 
-        <입출력 예>
-            n = 118372
-            return 873211
-    */
-    function solution(n) {
-        const nToArr = Array.from(n.toString()).sort().reverse();
-        console.log(nToArr);
-        const arrToN = nToArr.toString().replaceAll(",", "") - 0;
-        return arrToN
-    }
+    <입출력 예>
+        n = 118372
+        return 873211
+*/
+function solution(n) {
+    const nToArr = Array.from(n.toString()).sort().reverse();
+    console.log(nToArr);
+    const arrToN = nToArr.toString().replaceAll(",", "") - 0;
+    return arrToN
+}
 
-    console.log(solution(118372));
+console.log(solution(118372));
 
     //Object 정렬
     let student = [
@@ -76,48 +76,47 @@
         {name: "명수", age: 44}
     ]
 
-    console.log(JSON.stringify(student));
+console.log(JSON.stringify(student));
 
-    /* 이름순으로 정렬 */
-        student.sort(function (a, b) { // 오름차순
-            return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
-            // 광희, 명수, 재석, 형돈
-        });
-        console.log(student.map(function (s) {
-            return s.name;
-        }));
+/* 이름순으로 정렬 */
+student.sort(function (a, b) { // 오름차순
+    return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+    // 광희, 명수, 재석, 형돈
+});
+console.log(student.map(function (s) {
+    return s.name;
+}));
 
-        student.sort(function (a, b) { // 내림차순
-            return a.name > b.name ? -1 : a.name < b.name ? 1 : 0;
-            // 형돈, 재석, 명수, 광희
-        });
-        console.log(student.map(function (s) {
-            return s.name;
-        }));
+student.sort(function (a, b) { // 내림차순
+    return a.name > b.name ? -1 : a.name < b.name ? 1 : 0;
+    // 형돈, 재석, 명수, 광희
+});
+console.log(student.map(function (s) {
+    return s.name;
+}));
 
-    /* 나이순으로 정렬 */
-        let sortingField = "age";
+/* 나이순으로 정렬 */
+let sortingField = "age";
 
-        student.sort(function (a, b) { // 오름차순
-            return a[sortingField] - b[sortingField]; // [sortingField] 괄호로 감싼이유 : 특정 속성이름을 동적으로 접근하기  위한 방법 a.age - b.age와 같다
-            // 13, 21, 25, 44
-        });
-        console.log(JSON.stringify(student.map(s => s[sortingField])));
+student.sort(function (a, b) { // 오름차순
+    return a[sortingField] - b[sortingField]; // [sortingField] 괄호로 감싼이유 : 특정 속성이름을 동적으로 접근하기  위한 방법 a.age - b.age와 같다
+    // 13, 21, 25, 44
+});
+console.log(JSON.stringify(student.map(s => s[sortingField])));
 
 
-        student.sort(function (a, b) { // 내림차순
-            return b[sortingField] - a[sortingField];
-            // 44, 25, 21, 13
-        });
-        console.log(JSON.stringify(student.map(s => s[sortingField])));
+student.sort(function (a, b) { // 내림차순
+    return b[sortingField] - a[sortingField];
+    // 44, 25, 21, 13
+});
+console.log(JSON.stringify(student.map(s => s[sortingField])));
 
-        //[sortingField]는 age 니깐
-        student.sort(function (a, b) { // 오름차순
-            return a.age - b.age;
-            // 13, 21, 25, 44
-        });
-        console.log(JSON.stringify(student.map(s => s[sortingField])));
-
+//[sortingField]는 age 니깐
+student.sort(function (a, b) { // 오름차순
+    return a.age - b.age;
+    // 13, 21, 25, 44
+});
+console.log(JSON.stringify(student.map(s => s[sortingField])));
 
 
 </script>

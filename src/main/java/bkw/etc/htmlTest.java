@@ -73,6 +73,11 @@ public class htmlTest {
     @GetMapping("/tableResize2")
     public String table_resize2(){return "resize_table_column2";}
 
+    @GetMapping("/scss")
+    public String scss_test(){
+        return "scss1";
+    }
+
 
 
 }
