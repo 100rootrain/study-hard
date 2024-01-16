@@ -1,0 +1,61 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #222;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Button Hover Effects*/
+.btn-outer {
+    .btn {
+        color: #fff;
+        text-transform: uppercase;
+        width: 300px;
+        display: block; //a 태그는 인라인요소이기때문에 크기값을 가질수가 없어서 지정
+        //border: 1px solid #fff;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        background-color: #555;
+        transition: 0.5s;
+        position: relative;
+
+        &:hover{
+            background: transparent;
+        }
+        &:before,
+        &:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: inherit;
+            height: inherit;
+            border: 1px solid #fff;
+            opacity:0;
+            transition: 0.5s;
+        }
+        &:hover:before{
+            transform: rotate(45deg);
+            opacity:1;
+        }
+        &:hover:after{
+            transform: rotate(-45deg);
+            opacity:1;
+        }
+        
+    }
+
+    //scss - 줄주석//     -> 컴파일시 css에 안남음 
+    //     - 블록주석/**/ -> 컴파일시 css에 남음
+
+}
