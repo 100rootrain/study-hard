@@ -27,7 +27,7 @@ a{
         line-height: 50px;
         background-color: #555;
         transition: 0.5s;
-        position: relative;
+        position: relative; //요소를 자기기준으로 배치
 
         &:hover{
             background: transparent;
@@ -35,7 +35,8 @@ a{
         &:before,
         &:after{
             content: '';
-            position: absolute;
+            position: absolute; 
+            //가장 가까운 조상요소를 기준으로 배치
             top: 0;
             left: 0;
             width: inherit;

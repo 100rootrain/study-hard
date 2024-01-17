@@ -1,0 +1,71 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+//body에 적용시키면 input태그에 적용되지않기때문에 * 로 지정
+* {
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 15px;
+    background-color: #eeeeee1c;
+    list-style: 1.6em;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Sign In */
+.signin {
+    .sign-inner{
+        border: 1px solid #ccc;
+        background-color: #fff;
+        padding: 20px;
+        width: 350px;
+    }
+
+    h1 {
+        text-align: center;
+        font-weight: normal;
+        margin-top: 0;
+    }
+
+    /* input은 inline-block 이기 때문에 block으로 지정
+    예외로는 input의 경우 display: block으로 지정하여도 width: 100%로 지정해야된다. */
+    input[type=button],
+    input[type=email],
+    input[type=password],
+    input[type=submit] {
+        display: block;
+        width: 100%;
+        padding: 8px;
+        margin:10px 0;
+
+        border: 1px solid #ddd;
+        border-radius: 5px;
+
+        outline: none;
+    }
+
+    input[type=button]{
+        margin-bottom: 20px;
+        cursor: pointer;
+        background-color: #fff;
+        &:hover{
+            background-color: crimson;
+        }
+    }
+
+    input[type=submit]{
+        background-color: rgba(14, 126, 14, 0.74);
+        color: #fff;
+        font-size: 15px;
+        cursor: pointer; //emit 단축키 cur
+    }
+
+    input[type=email]:focus{
+        background-color: #f8edb5;
+    }
+}

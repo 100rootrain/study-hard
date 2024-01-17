@@ -1,0 +1,59 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+//body에 적용시키면 input태그에 적용되지않기때문에 * 로 지정
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+.btn {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #333;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    transition:0.35s; //버튼의 경우에 적당함
+    &:hover {
+        background-color: #000;
+        color: #fff;
+    }
+}
+
+.frame{
+    display: flex;
+    gap: 20px;
+    div{
+        // border: 1px solid gray;
+        flex: 1;
+        height: 150px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px 10px rgba(114, 114, 114, 0.123);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        cursor: pointer;
+        transition: 0.35s;
+
+        &:nth-child(1){
+            background-color: crimson;
+        }
+
+        &:nth-child(2){
+            background-color: yellowgreen;
+        }
+
+        &:nth-child(3){
+            background-color: royalblue;
+        }
+
+        &:hover{
+            color: white;
+            background-color: #000;
+            transform: translateY(-5px);
+        }
+
+    }
+}

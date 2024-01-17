@@ -1,0 +1,42 @@
+body{
+    padding: 0;
+    margin: 0;
+
+}
+
+.block1{
+    background-color: tomato;
+    margin:20px;
+    padding-top:20px;
+}
+.block2{
+    background-color: yellowgreen;
+    height: 100px;
+}
+
+.block3{
+    background-color: gray;
+    padding:0;
+}
+
+.span1{
+    background-color: tomato;
+    height: 100px; /* 인라인 요소는 너비 높이 지정X  */
+    margin:20px; /* 인라인 요소는 좌우 margin만 적용 */
+    padding-left:20px;
+}
+
+.span2{
+    background-color: yellow;
+}
+
+.span3{
+    background-color: skyblue;
+}
+
+.inline-block{
+    display: inline-block;
+    background-color: aqua;
+    
+    margin: 30px;
+}

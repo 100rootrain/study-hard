@@ -1,0 +1,29 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+//body에 적용시키면 input태그에 적용되지않기때문에 * 로 지정
+* {
+    font-family: "Raleway", sans-serif;
+}
+
+:is(header, section, footer) h1 {
+    font-size: 30px;
+    font-weight: normal;
+}
+
+:is(header, section, footer) h1:before {
+    content: '';
+    width: 10px;
+    height: 30px;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: crimson;
+    margin-right: 10px;
+    transform: translateY(3px);
+
+}
+
+.frame :is(p, span){ //.frame 밑에있는 p, span
+    font-size: 30px;
+
+}
