@@ -1,0 +1,36 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+//body에 적용시키면 input태그에 적용되지않기때문에 * 로 지정
+* {
+    font-family: "Raleway", sans-serif;
+    box-sizing: border-box;
+}
+
+//Variables
+$color-primary: #222;
+$color-secondary: #333;
+$bgc-item: #eee;
+$portfolio-item-w: 300px;
+$portfolio-item-h: 300px;
+$portfolio-images-url: "images/";
+
+
+/* portfolio */
+.portfolio {
+
+    padding: 20px;
+
+    h1 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .portfolio-items {
+        .portfolio-item {
+            border: 1px solid #000;
+            width: $portfolio-item-w;
+            height: $portfolio-item-h;
+        }
+    }
+}

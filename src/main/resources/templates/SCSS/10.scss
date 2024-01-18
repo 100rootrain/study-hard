@@ -1,0 +1,33 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+//body에 적용시키면 input태그에 적용되지않기때문에 * 로 지정
+* {
+    font-family: "Raleway", sans-serif;
+}
+
+/* Variables */
+$primary-btn: skyblue;
+$second-btn: yellowgreen;
+$warning-btn: black;
+
+.btns{
+    .btn{
+        border: none;
+        text-transform: uppercase;
+        font-size: 15px;
+        padding: 10px 30px;
+        border-radius: 3px;
+        color: #fff;
+    }
+
+    .primary{
+        background-color: $primary-btn;
+    }
+    .second{
+        background-color: $second-btn;
+    }
+    .warning{
+        background-color: $warning-btn;
+    }
+}
