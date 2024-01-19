@@ -1,0 +1,49 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+.btn {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #333;
+  border-radius: 3px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.35s;
+}
+.btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.frame {
+  display: flex;
+  gap: 20px;
+}
+.frame div {
+  flex: 1;
+  height: 150px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 10px rgba(114, 114, 114, 0.123);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.35s;
+}
+.frame div:nth-child(1) {
+  background-color: crimson;
+}
+.frame div:nth-child(2) {
+  background-color: yellowgreen;
+}
+.frame div:nth-child(3) {
+  background-color: royalblue;
+}
+.frame div:hover {
+  color: white;
+  background-color: #000;
+  transform: translateY(-5px);
+}

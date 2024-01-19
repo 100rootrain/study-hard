@@ -1,0 +1,14 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6em;
+}
+
+.portfolio p {
+  text-align: center;
+  text-overflow: hidden;
+  text-transform: uppercase;
+}

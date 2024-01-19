@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/*
+ .frame{
+    margin: 15px;
+    .btn{
+        padding: 10px;
+        text-align: center;
+        width: 200px;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        &.confirm{
+            background-color: yellowgreen;
+        }
+
+        &.warning{
+            background-color: crimson;
+        }
+    }
+}
+ */
+.frame {
+  margin: 15px;
+}
+
+/*
+중요 : 중첩하지 않고도 이용할려면 
+독립적으로 쓰는것이 필수불가결하다.
+*/
+button.btn {
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+button.confirm {
+  background-color: yellowgreen;
+}
+
+button.warning {
+  background-color: crimson;
+}

@@ -1,0 +1,25 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* Google Web Fonts CDN */
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+/*Built-in Function : map-get*/
+body {
+  background-color: #dfe6e9;
+  font-family: "Noto Sans KR";
+}
+
+.frame h1 {
+  color: #0984e3;
+  font-size: 45px;
+  font-family: "Raleway";
+}
+.frame h2 {
+  font-size: 32px;
+}
+.frame h3 {
+  font-size: 20px;
+}

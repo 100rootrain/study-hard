@@ -1,0 +1,13 @@
+
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+//css는 url로만, scss는 바로 쓸수있거나 확장자없이 쓸수있다.
+//@import url("reset.css")
+//@import "reset.scss"
+@import "reset";
+
+body{
+    font-family: 'Raleway', sans-serif;
+}

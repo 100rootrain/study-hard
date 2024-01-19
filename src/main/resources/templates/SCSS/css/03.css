@@ -1,0 +1,13 @@
+.font-large {
+  font-size: 50px;
+  color: crimson;
+  text-transform: uppercase;
+}
+.font-medium {
+  font-size: 30px;
+  color: yellowgreen;
+}
+.font-small {
+  font-size: 20px;
+  color: chocolate;
+}

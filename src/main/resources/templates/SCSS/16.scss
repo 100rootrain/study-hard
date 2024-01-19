@@ -1,0 +1,59 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+/*Built-in Function : map-get*/
+$color: (
+    // 이름:값,
+    // 이름:값,
+    // 이름:값,
+    // 이름:값
+    font-primary: #2d3436,
+    font-secondary: #636e72,
+    font-focus: #0984e3,
+    bgc-primary: #dfe6e9,
+    bgc-secondary: #b2bec3
+);
+
+$headline-font: (
+    large: 45px,
+    medium: 32px,
+    small: 20px
+);
+
+$font-family: (
+    kor: 'Noto Sans KR',
+    eng: 'Raleway'
+
+);
+
+
+//map-get(변수이름, 변수가 가진 배열이름)
+
+body {
+    background-color: map-get($color, bgc-primary);
+    font-family: map-get($font-family, kor);
+}
+
+.frame {
+    h1 {
+        color: map-get($color, font-focus);
+        font-size: map-get($headline-font, large);
+        font-family: map-get($font-family, eng);
+    }
+
+    h2 {
+        font-size: map-get($headline-font, medium);
+    }
+
+    h3 {
+        font-size: map-get($headline-font, small);
+    }
+}

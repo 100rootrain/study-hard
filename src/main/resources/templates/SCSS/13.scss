@@ -1,0 +1,48 @@
+/* Google Web Font */
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@mixin default {
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    margin: 0;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6em;
+}
+
+body {
+    @include default;
+}
+
+@mixin headline {
+
+    text-align: center;
+    font-size: 36px;
+    text-transform: capitalize;
+    position: relative;
+    padding-bottom: 20px;
+
+    span {
+        color: royalblue;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 4px;
+        background-color: crimson;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.heading {
+    @include headline;
+}
+
+.news-headline {
+    @include headline;
+}

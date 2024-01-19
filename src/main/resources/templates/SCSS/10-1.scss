@@ -14,6 +14,7 @@ $bgc-item: #eee;
 $portfolio-item-w: 300px;
 $portfolio-item-h: 300px;
 $portfolio-images-url: "images/";
+$portfolio-item-bdrs: 10px;
 
 
 /* portfolio */
@@ -27,10 +28,26 @@ $portfolio-images-url: "images/";
     }
 
     .portfolio-items {
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 1200px;
+        margin: auto;
+        grid-gap: 15px;
         .portfolio-item {
             border: 1px solid #000;
             width: $portfolio-item-w;
             height: $portfolio-item-h;
+            border-radius: $portfolio-item-bdrs;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            &:nth-child(1){
+              background-image: url($portfolio-images-url + "test.png");
+            }
+
+            &:nth-child(2){
+                background-image: url($portfolio-images-url + "test4.png");
+              }
         }
     }
 }

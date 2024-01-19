@@ -1,0 +1,24 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+* {
+  font-family: "Raleway", sans-serif;
+}
+
+/* Variables */
+.btns .btn {
+  border: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  padding: 10px 30px;
+  border-radius: 3px;
+  color: #fff;
+}
+.btns .primary {
+  background-color: skyblue;
+}
+.btns .second {
+  background-color: yellowgreen;
+}
+.btns .warning {
+  background-color: black;
+}

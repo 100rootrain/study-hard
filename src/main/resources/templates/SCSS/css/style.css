@@ -1,0 +1,24 @@
+/* import SCSS files */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+header {
+  background-color: yellowgreen;
+}
+
+footer {
+  background-color: crimson;
+}
+
+/* Google Web Font */
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: #ddd;
+}cial li {
+  border: 1px solid #000;
+  padding: 10px;
+  flex: 1;
+  text-align: center;
+}
+.social li a {
+  color: #000;
+  text-transform: uppercase;
+}
