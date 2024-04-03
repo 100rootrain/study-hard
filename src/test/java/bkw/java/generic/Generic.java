@@ -73,6 +73,7 @@ class MyValue{
 
     //java에서는 모든 클래스가 java.lang.Object 클래스를 상속한다.
     //toString(), equals(Object obj), hashCode(), getClass(), finalize(), clone()
+    //오버라이드로 상속한 다음, 사용자 입맛에 맞게 수정하자. 나는 happy값을 보는게 목적이라서.
     @Override
     public String toString() {
         return "MyValue{" +
