@@ -37,7 +37,6 @@ public class Generic<T> {
         Generic1 generic1 = new Generic1();
         generic1.printValue(12345);
         generic1.printValue("안녕하세요.");
-
 //        MyValue myValue = new MyValue();
         myValue.happy = 3000;
         generic1.printValue(myValue);
@@ -45,7 +44,7 @@ public class Generic<T> {
 
 }
 
-class Generic1{
+class Generic1 {
     public void printValue(int value) {
         System.out.println("value is '" + value + "'");
     }
@@ -60,7 +59,7 @@ class Generic1{
 
 }
 
-class MyValue{
+class MyValue {
     Integer happy;
 
     public Integer getHappy() {

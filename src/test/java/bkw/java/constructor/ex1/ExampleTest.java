@@ -1,4 +1,4 @@
-package bkw.java.constructor;
+package bkw.java.constructor.ex1;
 
 /**
  * Please explain the class!!
