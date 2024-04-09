@@ -19,6 +19,8 @@ public class Ex1 {
 
         Arrays.sort(numbers, Collections.reverseOrder());
         System.out.println("역순 정렬된 숫자 배열" + Arrays.toString(numbers));
+        Arrays.sort(numbers);
+        System.out.println("오름차순 정렬" + Arrays.toString(numbers));
 
         // 2. 문자열 리스트
         List<String> words = new ArrayList<>();
@@ -29,6 +31,9 @@ public class Ex1 {
 
         Collections.sort(words, Collections.reverseOrder());
         System.out.println(words);
+
+
+
 
     }
 }

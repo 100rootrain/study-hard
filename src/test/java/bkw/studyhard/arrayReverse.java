@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * 배열 역순정렬
+ */
 public class arrayReverse {
     public static void main(String[] args) {
 //방법1
@@ -11,8 +14,8 @@ public class arrayReverse {
 
         for(int i=0; i<arr.length/2; i++){ //0,1
             String temp = arr[i]; //arr[0], arr[1]
-            arr[i] = arr[arr.length -i -1]; //arr[0]=arr[3] , arr[1]=arr[2]
-            arr[arr.length -i -1] = temp; // arr[3] = arr[0], arr[2] = arr[1]
+            arr[i] = arr[arr.length -i -1]; //arr[0]=arr[4-0-1] , arr[1]=arr[4-1-1]
+            arr[arr.length -i -1] = temp; // arr[4-0-1] = arr[0], arr[4-1-1] = arr[1]
         }
 
         System.out.println("리버스 후 배열: " + Arrays.toString(arr));
@@ -23,7 +26,10 @@ public class arrayReverse {
         int[] b = new int[a.length];
         for(int i=0;i<a.length;i++){
             b[i]=a[a.length-i-1];
-
+// 0,1,2,...9
+// b[0] = a[9]
+// b[1] = a[8]
+//
         }
         System.out.println("Arrays.toString(b) " + Arrays.toString(b));
         System.out.println("Arrays.toString(a) : "+Arrays.toString(a));
