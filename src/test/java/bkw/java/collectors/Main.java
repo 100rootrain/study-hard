@@ -24,7 +24,7 @@ public class Main {
         System.out.println(string);
 
         /*
-        
+
         * Stream.of(charArray) : char배열을 스트림으로 변환
         * .map(arr -> new String(arr)) : 각 char 배열을 String으로 변환
         * .collect(Collectors.joining()) : 해당 변환된 문자열 결합
